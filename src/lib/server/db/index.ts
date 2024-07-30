@@ -1,12 +1,6 @@
 import { drizzle } from 'drizzle-orm/postgres-js';
 import postgres from 'postgres';
-// import { POSTGRES_URL } from '$env/static/private';
-
-import dotenv from '@dotenvx/dotenvx';
-
-dotenv.config();
-
-const POSTGRES_URL = process.env.POSTGRES_URL;
+import { POSTGRES_URL } from '$env/static/private';
 
 if (!POSTGRES_URL) {
 	throw new Error('POSTGRES_URL must be set');
