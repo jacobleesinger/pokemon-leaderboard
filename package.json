@@ -3,7 +3,7 @@
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
-		"dev": "dotenvx run -f .env.local -- vite dev",
+		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
 		"test": "npm run test:integration && npm run test:unit",
@@ -23,6 +23,7 @@
 		"@types/eslint": "^9.6.0",
 		"autoprefixer": "^10.4.19",
 		"daisyui": "^4.12.10",
+		"drizzle-kit": "^0.23.0",
 		"eslint": "^9.0.0",
 		"eslint-config-prettier": "^9.1.0",
 		"eslint-plugin-svelte": "^2.36.0",
@@ -40,6 +41,9 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@supabase/supabase-js": "^2.44.4"
+		"@supabase/ssr": "^0.4.0",
+		"@supabase/supabase-js": "^2.44.4",
+		"drizzle-orm": "^0.32.1",
+		"postgres": "^3.4.4"
 	}
 }
