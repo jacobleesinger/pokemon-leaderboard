@@ -1,10 +1,15 @@
+// import { runsTable } from '$lib/server/db/schema';
+import { db } from '$lib/server/db';
 import type { PageServerLoad } from './$types';
 
-export const load: PageServerLoad = async ({ locals: { supabase } }) => {
-	const { data: countries } = await supabase
-		.from('countries')
-		.select('name')
-		.limit(5)
-		.order('name');
-	return { countries: countries ?? [] };
+export const load: PageServerLoad = async () => {
+	const runs = await db.query.runsTable.findMany({
+		with: {
+			pokemon: true,
+			user: true
+		}
+	});
+	console.log(runs);
+
+	return { runs };
 };

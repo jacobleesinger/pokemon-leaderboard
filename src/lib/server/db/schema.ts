@@ -1,3 +1,4 @@
+import { relations } from 'drizzle-orm';
 import { integer, pgTable, text, uuid, pgSchema } from 'drizzle-orm/pg-core';
 
 export const pokemonTable = pgTable('pokemon', {
@@ -33,3 +34,12 @@ export const runsTable = pgTable('runs', {
 	level: integer('level').notNull(),
 	resets: integer('resets').notNull()
 });
+
+export const runsRelations = relations(runsTable, ({ one }) => ({
+	pokemon: one(pokemonTable, { references: [pokemonTable.id], fields: [runsTable.pokemonId] }),
+	user: one(usersTable, { references: [usersTable.id], fields: [runsTable.userId] })
+}));
+
+export const usersRelations = relations(usersTable, ({ many }) => ({
+	runs: many(runsTable)
+}));
