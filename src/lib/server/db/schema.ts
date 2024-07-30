@@ -21,3 +21,13 @@ export const usersTable = pgTable('users', {
 	email: text('email').unique().notNull(),
 	name: text('name').notNull()
 });
+
+export const runsTable = pgTable('runs', {
+	id: integer('id').primaryKey(),
+	pokemonId: integer('pokemon_id').notNull(),
+	userId: integer('user_id').notNull(),
+	realTime: integer('real_time').notNull(),
+	gameTime: integer('game_time').notNull(),
+	level: integer('level').notNull(),
+	resets: integer('resets').notNull()
+});
