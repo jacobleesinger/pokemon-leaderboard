@@ -1,0 +1,56 @@
+{
+  "id": "e1650483-8ce2-4fce-abbc-16d90511d9c2",
+  "prevId": "ed860aba-bc5c-4d9f-b983-ac866a653bc1",
+  "version": "7",
+  "dialect": "postgresql",
+  "tables": {
+    "public.pokemon": {
+      "name": "pokemon",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "integer",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "name": {
+          "name": "name",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "sprite_url": {
+          "name": "sprite_url",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "type_1": {
+          "name": "type_1",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "type_2": {
+          "name": "type_2",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    }
+  },
+  "enums": {},
+  "schemas": {},
+  "sequences": {},
+  "_meta": {
+    "columns": {},
+    "schemas": {},
+    "tables": {}
+  }
+}
