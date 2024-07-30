@@ -23,9 +23,11 @@ export const usersTable = pgTable('users', {
 });
 
 export const runsTable = pgTable('runs', {
-	id: integer('id').primaryKey(),
+	id: uuid('id').primaryKey(),
 	pokemonId: integer('pokemon_id').notNull(),
-	userId: integer('user_id').notNull(),
+	userId: uuid('user_id')
+		.notNull()
+		.references(() => usersTable.id),
 	realTime: integer('real_time').notNull(),
 	gameTime: integer('game_time').notNull(),
 	level: integer('level').notNull(),

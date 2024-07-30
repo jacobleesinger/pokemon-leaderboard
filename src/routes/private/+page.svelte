@@ -6,7 +6,6 @@
 
 	export let data: PageData;
 	$: ({ notes, supabase, user } = data);
-
 	let handleSubmit: EventHandler<SubmitEvent, HTMLFormElement>;
 	$: handleSubmit = async (evt) => {
 		evt.preventDefault();
@@ -26,6 +25,7 @@
 </script>
 
 <h1>Private page for user: {user?.email}</h1>
+<p>id: {user?.id}</p>
 <h2>Notes</h2>
 <ul>
 	{#each notes as note}
