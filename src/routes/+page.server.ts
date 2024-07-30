@@ -7,7 +7,8 @@ export const load: PageServerLoad = async () => {
 		with: {
 			pokemon: true,
 			user: true
-		}
+		},
+		orderBy: (runs, { asc }) => asc(runs.realTime)
 	});
 	console.log(runs);
 
