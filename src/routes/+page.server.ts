@@ -10,7 +10,6 @@ export const load: PageServerLoad = async () => {
 		},
 		orderBy: (runs, { asc }) => asc(runs.realTime)
 	});
-	console.log(runs);
 
 	return { runs };
 };
